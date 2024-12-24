@@ -5,7 +5,7 @@ title: Hikkey's projects
 
 # Data Scientist
 
-#### Technical Skills: Python, Java, Idris, SQL, Docker
+#### Technical Skills: Python, Java, Idris, SQL, Docker, Datas, Algorithms & Data Structures.
 
 ## Education
 - B.S., Informatique | Rennes 1 University
