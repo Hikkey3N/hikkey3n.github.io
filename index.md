@@ -1,50 +1,90 @@
 ---
 layout: default
-title: Hikkey's projects
+title: Hikkey's Projects
 ---
 
-# Python/Java Engineer
+# 👨‍💻 Python/Java Engineer
 
-#### Technical Skills: Python, Java, Idris, SQL, Docker, Datas, Algorithms & Data Structures.
-
-## Education
-- B.S., Informatique | Rennes 1 University
-
-## Projects
-### ASCII generator - Generate image/video into image/video of ASCII characters.
-[Project github](https://github.com/Hikkey3N/ASCII-img2ascii-video2ascii)
-
-This ASCII generator project converts images or videos into representations using ASCII characters. It effectively translates visual content into text-based art, preserving key details and structure. With support for both static images and videos, it offers a creative way to render media in a unique, minimalist format. The project is flexible and can be expanded for more advanced features, like color or resolution adjustments.
+#### 🔧 Technical Skills: Python, Java, Idris, SQL, Docker, Data Structures & Algorithms, and more...
 
 ---
 
-### Boid simulation - Efficient and Modular Boid Flocking Simulation with Math and Pygame
-[Project github](https://github.com/Hikkey3N/BoidSimulation/tree/main)
-
-This Boid simulation in Python uses Pygame to model flocking behavior with key algorithms like separation, alignment, and cohesion. It features smooth motion through vector math, edge wrapping for continuous movement, and modular, extensible code. The project is well-structured, offering a solid foundation for further enhancements and exploration of artificial life simulations.
+## 🎓 Education
+- **B.S., Informatique** | Rennes 1 University
 
 ---
 
-### REST - Café API - Flask-based Café Database API with CRUD Operations
-[Project github](https://github.com/Hikkey3N/REST_cafeAPI)
+## 🚀 Projects
 
-This Flask API allows users to interact with a café database, supporting all basic CRUD operations. It provides endpoints to fetch random cafés, search by location, add new cafés, update prices, and delete closed cafés securely with an API key. The project uses SQLAlchemy for database management and is designed to be flexible, making it easy to manage and expand the café records with simple, intuitive routes.
+### 1. **ASCII Generator**
+> Convert images and videos into ASCII representations. A creative, minimalist approach to rendering media in text-based art.
+
+[![ASCII generator](https://img.youtube.com/vi/{video_id}/0.jpg)](https://github.com/Hikkey3N/ASCII-img2ascii-video2ascii)
+[Project GitHub](https://github.com/Hikkey3N/ASCII-img2ascii-video2ascii)
+
+**Key Features:**
+- Convert both static images and videos into ASCII art
+- Potential for advanced features like color and resolution adjustments
+- Fully customizable and extendable
+
+---
+
+### 2. **Boid Simulation**
+> Efficient and modular flocking simulation using vector math and Pygame. Dive into artificial life and modeling complex behaviors.
+
+![Boid Simulation](https://path_to_image_or_gif)  
+[Project GitHub](https://github.com/Hikkey3N/BoidSimulation/tree/main)
+
+**Key Features:**
+- Realistic flocking behavior with separation, alignment, and cohesion
+- Smooth, natural-looking motion
+- Edge-wrapping for continuous movement
 
 ---
 
-### Table Processing and Conversion Toolkit Using Logical Language Idris
-[Project github](https://github.com/Hikkey3N/FUN-TP.Table/tree/main)
+### 3. **Café API (Flask-based REST API)**
+> Manage and interact with a café database through a RESTful API with full CRUD operations.
 
-This project provides a set of functional utilities for processing and transforming tables, especially in CSV and HTML formats. Key features include sorting tables by numerical columns, adding row numbers, ranking entries, and manipulating individual cells. It also supports HTML conversion of tables and handles CSV-to-table transformations with custom delimiters. The project emphasizes composition and functional programming techniques, using Haskell-style operations to efficiently manipulate and output data in various formats.
+![Cafe API](https://path_to_image_or_screenshot)  
+[Project GitHub](https://github.com/Hikkey3N/REST_cafeAPI)
+
+**Key Features:**
+- Full CRUD functionality for café records
+- Random café fetching, location-based searching, and secure café management
+- Built with Flask and SQLAlchemy for database management
 
 ---
 
-### Basic Web Scrapping with Scrapy 
-[Project github](https://github.com/Hikkey3N/BasicWebScrapping_Scrapy)
+### 4. **Table Processing & Conversion Toolkit**
+> A functional language-based toolkit for processing tables, ideal for working with CSV and HTML formats.
 
-This is just a project that I followed tutorial from [Freecodecamp](https://www.freecodecamp.org/) that taught me all the fundalmentals of scrapy, a powerful tool for pulling data from websites.
+[Project GitHub](https://github.com/Hikkey3N/FUN-TP.Table/tree/main)
+
+**Key Features:**
+- Sort, rank, and transform tables with ease
+- Convert between CSV and HTML formats
+- Functional programming principles for clean, efficient code
 
 ---
-![EEG Band Discovery](/assets/img/eeg_band_discovery.jpeg)
 
-<!-- Continue the rest of your content similarly -->
+### 5. **Basic Web Scraping with Scrapy**
+> A simple yet powerful introduction to web scraping using Scrapy, based on a tutorial from [FreeCodeCamp](https://www.freecodecamp.org/).
+
+[Project GitHub](https://github.com/Hikkey3N/BasicWebScrapping_Scrapy)
+
+**Key Features:**
+- Pull structured data from websites
+- Learn the fundamentals of Scrapy for efficient web scraping
+
+---
+
+![EEG Band Discovery](assets/img/eeg_band_discovery.jpeg)
+
+---
+
+## 💬 Connect With Me
+Feel free to reach out via the following:
+- Email: [youremail@example.com](mailto:youremail@example.com)
+- LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/yourprofile)
+- Twitter: [@yourhandle](https://twitter.com/yourhandle)
+
