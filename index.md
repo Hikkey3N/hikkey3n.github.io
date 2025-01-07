@@ -19,7 +19,7 @@ title: Hikkey's Projects
 ### 1. **ASCII Generator**
 > Convert images and videos into ASCII representations. A creative, minimalist approach to rendering media in text-based art.
 
-[![ASCII generator](assets/videos/ascii_gif.gif)]
+![ASCII generator](assets/videos/ascii_working/ascii_final_gif.gif)
 [Project GitHub](https://github.com/Hikkey3N/ASCII-img2ascii-video2ascii)
 
 **Key Features:**
@@ -31,7 +31,7 @@ title: Hikkey's Projects
 ### 2. **Boid Simulation**
 > Efficient and modular flocking simulation using vector math and Pygame. Dive into artificial life and modeling complex behaviors.
 
-![Boid Simulation](https://path_to_image_or_gif)  
+![Boid Simulation](assets/videos/boid/boid_gif.gif)  
 [Project GitHub](https://github.com/Hikkey3N/BoidSimulation/tree/main)
 
 **Key Features:**
