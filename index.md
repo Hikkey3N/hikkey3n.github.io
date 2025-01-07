@@ -5,7 +5,7 @@ title: Hikkey's Projects
 
 # 👨‍💻 Python/Java Engineer
 
-#### 🔧 Technical Skills: Python, Java, Idris, SQL, Docker, Data Structures & Algorithms, and more...
+#### 🔧 Technical Skills: Python, Java, Idris, SQL, Docker, Data Structures & Algorithms, and I'm planning to learn about Docker, Pytorch, Machine Learning,...
 
 ---
 
