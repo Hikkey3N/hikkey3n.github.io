@@ -44,7 +44,7 @@ title: Hikkey's Projects
 ### 3. **Café API (Flask-based REST API)**
 > Manage and interact with a café database through a RESTful API with full CRUD operations.
 
-![Cafe API](https://path_to_image_or_screenshot)  
+![Cafe API](assets/imgs/cafe_api/fully_functional.PNG)  
 [Project GitHub](https://github.com/Hikkey3N/REST_cafeAPI)
 
 **Key Features:**
@@ -57,6 +57,7 @@ title: Hikkey's Projects
 ### 4. **Table Processing & Conversion Toolkit**
 > A functional language-based toolkit for processing tables, ideal for working with CSV and HTML formats.
 
+![Csv into html](assets/imgs/csv2html/csv_final.png)
 [Project GitHub](https://github.com/Hikkey3N/FUN-TP.Table/tree/main)
 
 **Key Features:**
@@ -77,9 +78,7 @@ title: Hikkey's Projects
 
 ---
 
-![EEG Band Discovery](assets/img/eeg_band_discovery.jpeg)
 
----
 
 ## 💬 Connect With Me
 Feel free to reach out via the following:
