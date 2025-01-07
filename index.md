@@ -19,12 +19,11 @@ title: Hikkey's Projects
 ### 1. **ASCII Generator**
 > Convert images and videos into ASCII representations. A creative, minimalist approach to rendering media in text-based art.
 
-[![ASCII generator](https://img.youtube.com/vi/{video_id}/0.jpg)](https://github.com/Hikkey3N/ASCII-img2ascii-video2ascii)
+[![ASCII generator](https://img.youtube.com/vi/{video_id}/0.jpg)]
 [Project GitHub](https://github.com/Hikkey3N/ASCII-img2ascii-video2ascii)
 
 **Key Features:**
 - Convert both static images and videos into ASCII art
-- Potential for advanced features like color and resolution adjustments
 - Fully customizable and extendable
 
 ---
@@ -84,7 +83,7 @@ title: Hikkey's Projects
 
 ## 💬 Connect With Me
 Feel free to reach out via the following:
-- Email: [youremail@example.com](mailto:youremail@example.com)
+- Email: [youremail@example.com](mailto:congnguyen051906@gmail.com)
 - LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/yourprofile)
-- Twitter: [@yourhandle](https://twitter.com/yourhandle)
+
 
