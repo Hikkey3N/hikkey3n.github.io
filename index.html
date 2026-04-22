@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cong Nguyen — Portfolio</title>
+  <style>
+    /* ── Reset & base ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #0d1117;
+      --surface:      #161b22;
+      --surface-2:    #1c2128;
+      --border:       #30363d;
+      --text:         #c9d1d9;
+      --muted:        #8b949e;
+      --accent:       #58a6ff;
+      --green:        #3fb950;
+      --orange:       #d29922;
+      --purple:       #bc8cff;
+      --red:          #f85149;
+      --radius:       10px;
+      --transition:   0.2s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Layout ───────────────────────────────────────────────── */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── Nav ──────────────────────────────────────────────────── */
+    nav {
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+      position: sticky;
+      top: 0;
+      background: rgba(13, 17, 23, 0.92);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+    }
+
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .nav-name {
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 14px;
+      transition: color var(--transition);
+    }
+
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+
+    /* ── Hero ─────────────────────────────────────────────────── */
+    .hero {
+      padding: 64px 0 48px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-inner {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+
+    .avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+
+    .hero h1 {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .hero .tagline {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .hero .bio {
+      font-size: 14px;
+      color: var(--muted);
+      max-width: 560px;
+      margin-bottom: 16px;
+    }
+
+    .hero-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      transition: background var(--transition), border-color var(--transition);
+      cursor: pointer;
+    }
+
+    .btn:hover { background: var(--surface-2); border-color: var(--muted); text-decoration: none; }
+    .btn-accent { background: #1f6feb; border-color: #388bfd; color: #fff; }
+    .btn-accent:hover { background: #388bfd; }
+
+    /* ── Skills ───────────────────────────────────────────────── */
+    .skills {
+      padding: 40px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .skill-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .skill-label {
+      font-size: 12px;
+      color: var(--muted);
+      min-width: 110px;
+      padding-top: 3px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-size: 12px;
+      padding: 2px 10px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    .tag-blue   { border-color: #1f6feb; color: #58a6ff; background: rgba(31,111,235,.1); }
+    .tag-green  { border-color: #238636; color: #3fb950; background: rgba(35,134,54,.1); }
+    .tag-purple { border-color: #6e40c9; color: #bc8cff; background: rgba(110,64,201,.1); }
+    .tag-orange { border-color: #9e6a03; color: #d29922; background: rgba(158,106,3,.1); }
+
+    /* ── Projects ─────────────────────────────────────────────── */
+    .projects {
+      padding: 40px 0;
+    }
+
+    .projects-section { margin-bottom: 48px; }
+
+    .projects-section-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    /* Featured projects (AWS) span full width */
+    .project-grid.featured {
+      grid-template-columns: 1fr;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color var(--transition), transform var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      border-color: var(--muted);
+      transform: translateY(-2px);
+    }
+
+    /* Featured card is horizontal on wide screens */
+    .card.featured {
+      flex-direction: row;
+    }
+
+    .card-media {
+      background: #010409;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .card.featured .card-media {
+      width: 45%;
+    }
+
+    .card-media img,
+    .card-media gif {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-media img { display: block; }
+
+    .card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .card-link {
+      font-size: 12px;
+      color: var(--accent);
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .card-desc {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 16px;
+      flex: 1;
+      line-height: 1.55;
+    }
+
+    .card-highlights {
+      list-style: none;
+      margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .card-highlights li {
+      font-size: 12px;
+      color: var(--muted);
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .card-highlights li::before {
+      content: "›";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: auto;
+    }
+
+    .card-tag {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    /* ── Stats row ────────────────────────────────────────────── */
+    .stat-row {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--muted);
+    }
+
+    .stat .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    /* ── Footer ───────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      margin-top: 16px;
+    }
+
+    footer .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .footer-links a:hover { color: var(--text); text-decoration: none; }
+
+    .footer-copy {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* ── Responsive ───────────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .hero-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .card.featured { flex-direction: column; }
+      .card.featured .card-media { width: 100%; height: 200px; }
+      .skill-row { flex-direction: column; gap: 4px; }
+      .skill-label { text-align: left; min-width: unset; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Nav ──────────────────────────────────────────────────────── -->
+<nav>
+  <div class="container">
+    <span class="nav-name">Cong Nguyen</span>
+    <ul class="nav-links">
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="https://github.com/Hikkey3N" target="_blank">GitHub</a></li>
+      <li><a href="mailto:congnguyen051906@gmail.com">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Hero ─────────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <img class="avatar" src="assets/img/headshot_circle.png" alt="Cong Nguyen" />
+      <div>
+        <h1>TRUONG Cong Nguyen</h1>
+        <p class="tagline">Final-year CS student · University of Rennes 1</p>
+        <p class="bio">
+          I build things — cloud pipelines, simulations, APIs, and tools.
+          Currently seeking a software engineering internship in France.
+          Trilingual: Vietnamese, French (B2), English.
+        </p>
+        <div class="hero-links">
+          <a class="btn btn-accent" href="https://github.com/Hikkey3N" target="_blank">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            GitHub
+          </a>
+          <a class="btn" href="mailto:congnguyen051906@gmail.com">
+            ✉ congnguyen051906@gmail.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Skills ────────────────────────────────────────────────────── -->
+<section class="skills" id="skills">
+  <div class="container">
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="skills-grid">
+
+      <div class="skill-row">
+        <span class="skill-label">Cloud & Infra</span>
+        <div class="tags">
+          <span class="tag tag-orange">AWS Lambda</span>
+          <span class="tag tag-orange">API Gateway</span>
+          <span class="tag tag-orange">DynamoDB</span>
+          <span class="tag tag-orange">SQS</span>
+          <span class="tag tag-orange">SNS</span>
+          <span class="tag tag-orange">S3</span>
+          <span class="tag tag-orange">EC2</span>
+          <span class="tag tag-orange">ECR</span>
+          <span class="tag tag-orange">VPC</span>
+          <span class="tag tag-orange">CloudFormation</span>
+          <span class="tag tag-orange">SAM</span>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-label">Backend</span>
+        <div class="tags">
+          <span class="tag tag-blue">Python 3.12</span>
+          <span class="tag tag-blue">FastAPI</span>
+          <span class="tag tag-blue">Flask</span>
+          <span class="tag tag-blue">Java 21</span>
+          <span class="tag tag-blue">Maven</span>
+          <span class="tag tag-blue">REST APIs</span>
+          <span class="tag tag-blue">SQLAlchemy</span>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-label">DevOps</span>
+        <div class="tags">
+          <span class="tag tag-blue">Docker</span>
+          <span class="tag tag-blue">Docker Compose</span>
+          <span class="tag tag-blue">Nginx</span>
+          <span class="tag tag-blue">GitHub Actions</span>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-label">Testing</span>
+        <div class="tags">
+          <span class="tag tag-green">pytest</span>
+          <span class="tag tag-green">moto</span>
+          <span class="tag tag-green">JUnit 5</span>
+          <span class="tag tag-green">Mockito</span>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-label">Other</span>
+        <div class="tags">
+          <span class="tag tag-purple">Idris</span>
+          <span class="tag tag-purple">C</span>
+          <span class="tag tag-purple">Go</span>
+          <span class="tag tag-blue">Pandas</span>
+          <span class="tag tag-blue">NumPy</span>
+          <span class="tag tag-blue">PyTorch</span>
+          <span class="tag tag-blue">SQL</span>
+          <span class="tag">Git</span>
+          <span class="tag">Linux</span>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-label">Languages</span>
+        <div class="tags">
+          <span class="tag">Vietnamese (native)</span>
+          <span class="tag">French (B2)</span>
+          <span class="tag">English (professional)</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Projects ──────────────────────────────────────────────────── -->
+<section class="projects" id="projects">
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+
+    <!-- Cloud & Backend -->
+    <div class="projects-section">
+      <h3 class="projects-section-title">Cloud &amp; Backend Engineering</h3>
+      <div class="project-grid featured">
+
+        <!-- Serverless Task Manager -->
+        <div class="card featured">
+          <div class="card-media">
+            <img src="assets/videos/aws/serverless-task-manager.gif" alt="Serverless Task Manager tests" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="card-header">
+              <span class="card-title">Serverless Task Manager</span>
+              <a class="card-link" href="https://github.com/Hikkey3N/serverless-task-manager" target="_blank">View on GitHub →</a>
+            </div>
+            <p class="card-desc">
+              Fully serverless REST API for task management — no servers to manage, scales automatically, costs nothing when idle.
+              Deployed with a single SAM command. Full CI/CD pipeline on every git push.
+            </p>
+            <ul class="card-highlights">
+              <li>DynamoDB with a Global Secondary Index (GSI) for O(1) status-based queries</li>
+              <li>19 automated tests with pytest + moto — AWS fully mocked, zero real AWS calls in CI</li>
+              <li>GitHub Actions: lint → SAM build → deploy dev → deploy prod</li>
+            </ul>
+            <div class="card-tags">
+              <span class="card-tag">Python 3.11</span>
+              <span class="card-tag">AWS Lambda</span>
+              <span class="card-tag">DynamoDB</span>
+              <span class="card-tag">API Gateway</span>
+              <span class="card-tag">SAM</span>
+              <span class="card-tag">pytest</span>
+              <span class="card-tag">moto</span>
+              <span class="card-tag">GitHub Actions</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- AWS Order Pipeline -->
+        <div class="card featured">
+          <div class="card-media">
+            <img src="assets/videos/aws/aws-order-pipeline.gif" alt="AWS Order Pipeline tests" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="card-header">
+              <span class="card-title">AWS Order Processing Pipeline</span>
+              <a class="card-link" href="https://github.com/Hikkey3N/aws-order-pipeline" target="_blank">View on GitHub →</a>
+            </div>
+            <p class="card-desc">
+              Event-driven order processing microservice. HTTP submits an order to SQS; a separate Lambda processes it
+              asynchronously — the API never blocks waiting for processing to finish.
+            </p>
+            <ul class="card-highlights">
+              <li>Dead Letter Queue with 3-retry logic — failed messages retry automatically, no data loss</li>
+              <li>Partial batch failure (SQSBatchResponse) — only failed messages requeue, not the whole batch</li>
+              <li>SNS pub/sub for real-time email notifications on order confirmation</li>
+              <li>29 tests (JUnit 5 + Mockito) — constructor injection, no Spring overhead</li>
+            </ul>
+            <div class="card-tags">
+              <span class="card-tag">Java 21</span>
+              <span class="card-tag">SQS</span>
+              <span class="card-tag">SNS</span>
+              <span class="card-tag">DynamoDB</span>
+              <span class="card-tag">AWS SAM</span>
+              <span class="card-tag">JUnit 5</span>
+              <span class="card-tag">Mockito</span>
+              <span class="card-tag">Maven</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cloud File Vault -->
+        <div class="card featured">
+          <div class="card-media">
+            <img src="assets/videos/aws/cloud-file-vault.gif" alt="Cloud File Vault tests" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="card-header">
+              <span class="card-title">Cloud File Vault</span>
+              <a class="card-link" href="https://github.com/Hikkey3N/cloud-file-vault" target="_blank">View on GitHub →</a>
+            </div>
+            <p class="card-desc">
+              Containerised file storage API deployed on AWS EC2. Files stored in S3 via presigned URLs —
+              clients download directly from S3 so EC2 bandwidth stays near zero regardless of file size.
+            </p>
+            <ul class="card-highlights">
+              <li>Multi-stage Docker build: ~180 MB final image (vs ~600 MB single-stage). Non-root container user.</li>
+              <li>Full CloudFormation IaC: VPC, subnet, EC2 IAM role (least-privilege), S3, ECR — one template</li>
+              <li>GitHub Actions: build Docker → push ECR → SSH deploy to EC2 on every push to main</li>
+              <li>24 tests (pytest + moto + FastAPI dependency_overrides)</li>
+            </ul>
+            <div class="card-tags">
+              <span class="card-tag">Python 3.12</span>
+              <span class="card-tag">FastAPI</span>
+              <span class="card-tag">Docker</span>
+              <span class="card-tag">Nginx</span>
+              <span class="card-tag">EC2</span>
+              <span class="card-tag">S3</span>
+              <span class="card-tag">CloudFormation</span>
+              <span class="card-tag">ECR</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Algorithms & Simulation -->
+    <div class="projects-section">
+      <h3 class="projects-section-title">Algorithms &amp; Simulation</h3>
+      <div class="project-grid">
+
+        <!-- ASCII Generator -->
+        <div class="card">
+          <div class="card-media" style="height:200px;">
+            <img src="assets/videos/ascii_working/final_light.gif" alt="ASCII Generator" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
+          </div>
+          <div class="card-body">
+            <div class="card-header">
+              <span class="card-title">ASCII Art Generator</span>
+              <a class="card-link" href="https://github.com/Hikkey3N/ASCII-img2ascii-video2ascii" target="_blank">GitHub →</a>
+            </div>
+            <p class="card-desc">
+              Converts images and videos into ASCII art. Each pixel block's luminance maps to a character in a
+              ranked charset — supports Latin, Korean, Chinese, Japanese, and more.
+            </p>
+            <div class="card-tags">
+              <span class="card-tag">Python</span>
+              <span class="card-tag">OpenCV</span>
+              <span class="card-tag">Pillow</span>
+              <span class="card-tag">Image Processing</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Boid Simulation -->
+        <div class="card">
+          <div class="card-media" style="height:200px;">
+            <img src="assets/videos/boid/boid_gif.gif" alt="Boid Simulation" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
+          </div>
+          <div class="card-body">
+            <div class="card-header">
+              <span class="card-title">Boid Simulation</span>
+              <a class="card-link" href="https://github.com/Hikkey3N/BoidSimulation" target="_blank">GitHub →</a>
+            </div>
+            <p class="card-desc">
+              Real-time flocking simulation. 50 agents each compute separation, alignment, and cohesion forces
+              from local neighbors only — emergent group behavior with no central controller.
+            </p>
+            <div class="card-tags">
+              <span class="card-tag">Python</span>
+              <span class="card-tag">Pygame</span>
+              <span class="card-tag">Vector Math</span>
+              <span class="card-tag">Simulation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Compilateur -->
+        <div class="card">
+          <div class="card-body">
+            <div class="card-header">
+              <span class="card-title">Compiler — G to Java</span>
+              <a class="card-link" href="https://github.com/Hikkey3N/Compilateur" target="_blank">GitHub →</a>
+            </div>
+            <p class="card-desc">
+              University compiler project. Translates a custom procedural language (G) into Java-compatible output.
+              Covers lexical analysis, parsing, symbol table, type checking, and code generation.
+            </p>
+            <div class="card-tags">
+              <span class="card-tag">Java</span>
+              <span class="card-tag">ANTLR 4</span>
+              <span class="card-tag">Parsing</span>
+              <span class="card-tag">Compiler Design</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PreSum -->
+        <div class="card">
+          <div class="card-body">
+            <div class="card-header">
+              <span class="card-title">Prefix Sum — Algorithm Problems</span>
+              <a class="card-link" href="https://github.com/Hikkey3N/PreSum" target="_blank">GitHub →</a>
+            </div>
+            <p class="card-desc">
+              Three classic problems solved with the prefix sum technique: Range Sum Query, Contiguous Array,
+              and Subarray Sum Equals K. All O(n) time and space.
+            </p>
+            <div class="card-tags">
+              <span class="card-tag">Python</span>
+              <span class="card-tag">Algorithms</span>
+              <span class="card-tag">Data Structures</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- APIs & Tools -->
+    <div class="projects-section">
+      <h3 class="projects-section-title">APIs &amp; Tools</h3>
+      <div class="project-grid">
+
+        <!-- Café API -->
+        <div class="card">
+          <div class="card-media" style="height:180px;">
+            <img src="assets/imgs/cafe_api/fully_functional.PNG" alt="Café API" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
+          </div>
+          <div class="card-body">
+            <div class="card-header">
+              <span class="card-title">Café REST API</span>
+              <a class="card-link" href="https://github.com/Hikkey3N/REST_cafeAPI" target="_blank">GitHub →</a>
+            </div>
+            <p class="card-desc">
+              CRUD REST API for a café database. Random café fetch, location search, price updates, and
+              API-key-protected delete endpoint.
+            </p>
+            <div class="card-tags">
+              <span class="card-tag">Python</span>
+              <span class="card-tag">Flask</span>
+              <span class="card-tag">SQLAlchemy</span>
+              <span class="card-tag">SQLite</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- FUN-TP.Table -->
+        <div class="card">
+          <div class="card-media" style="height:180px;">
+            <img src="assets/imgs/csv2html/csv_final.png" alt="Table Toolkit" loading="lazy" style="width:100%;height:100%;object-fit:cover;" />
+          </div>
+          <div class="card-body">
+            <div class="card-header">
+              <span class="card-title">Table Processing Toolkit</span>
+              <a class="card-link" href="https://github.com/Hikkey3N/FUN-TP.Table" target="_blank">GitHub →</a>
+            </div>
+            <p class="card-desc">
+              CSV/HTML table processing in Idris. Sorting, ranking, and format conversion with data shape
+              constraints enforced at compile time via dependent types.
+            </p>
+            <div class="card-tags">
+              <span class="card-tag">Idris</span>
+              <span class="card-tag">Functional Programming</span>
+              <span class="card-tag">Dependent Types</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scrapy -->
+        <div class="card">
+          <div class="card-body">
+            <div class="card-header">
+              <span class="card-title">Web Scraper — Scrapy</span>
+              <a class="card-link" href="https://github.com/Hikkey3N/BasicWebScrapping_Scrapy" target="_blank">GitHub →</a>
+            </div>
+            <p class="card-desc">
+              Scrapy spider that pulls structured book data (title, price, rating, availability) from
+              books.toscrape.com and exports to JSON or CSV.
+            </p>
+            <div class="card-tags">
+              <span class="card-tag">Python</span>
+              <span class="card-tag">Scrapy</span>
+              <span class="card-tag">Web Scraping</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── Footer ────────────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <ul class="footer-links">
+      <li><a href="https://github.com/Hikkey3N" target="_blank">GitHub</a></li>
+      <li><a href="mailto:congnguyen051906@gmail.com">congnguyen051906@gmail.com</a></li>
+    </ul>
+    <span class="footer-copy">Cong Nguyen · Rennes, France</span>
+  </div>
+</footer>
+
+</body>
+</html>
