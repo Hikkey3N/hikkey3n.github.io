@@ -96,15 +96,6 @@
       gap: 36px;
     }
 
-    .avatar {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      border: 2px solid var(--border);
-      flex-shrink: 0;
-      object-fit: cover;
-    }
-
     .hero h1 {
       font-size: 26px;
       font-weight: 700;
@@ -437,7 +428,6 @@
 <section class="hero">
   <div class="container">
     <div class="hero-inner">
-      <img class="avatar" src="assets/img/headshot_circle.png" alt="Cong Nguyen" />
       <div>
         <h1>TRUONG Cong Nguyen</h1>
         <p class="tagline">Final-year CS student · University of Rennes 1</p>
@@ -528,6 +518,19 @@
           <span class="tag tag-blue">SQL</span>
           <span class="tag">Git</span>
           <span class="tag">Linux</span>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-label">AI / LLM</span>
+        <div class="tags">
+          <span class="tag tag-purple">LangChain</span>
+          <span class="tag tag-purple">ChromaDB</span>
+          <span class="tag tag-purple">RAG</span>
+          <span class="tag tag-purple">OpenAI API</span>
+          <span class="tag tag-blue">PyTorch</span>
+          <span class="tag tag-blue">Pandas</span>
+          <span class="tag tag-blue">NumPy</span>
         </div>
       </div>
 
@@ -648,6 +651,42 @@
               <span class="card-tag">S3</span>
               <span class="card-tag">CloudFormation</span>
               <span class="card-tag">ECR</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- AI & LLM -->
+    <div class="projects-section">
+      <h3 class="projects-section-title">AI &amp; LLM</h3>
+      <div class="project-grid featured">
+
+        <div class="card featured">
+          <div class="card-body" style="padding: 28px;">
+            <div class="card-header">
+              <span class="card-title">RAG Demo — Ask Questions to Any PDF</span>
+              <a class="card-link" href="https://github.com/Hikkey3N/rag-demo" target="_blank">View on GitHub →</a>
+            </div>
+            <p class="card-desc">
+              End-to-end Retrieval-Augmented Generation pipeline from scratch. Load any PDF, index it into a local
+              vector database, and ask natural-language questions — answers come with page-level sources from the document,
+              not from the model's training data.
+            </p>
+            <ul class="card-highlights">
+              <li>PDF → text chunks → OpenAI embeddings → ChromaDB vector store in one command</li>
+              <li>Semantic similarity search retrieves the top-k relevant chunks before generation</li>
+              <li>Custom prompt template keeps the LLM grounded — refuses to answer outside the document</li>
+              <li>Three modes: single query, interactive chat, and batch ingest</li>
+            </ul>
+            <div class="card-tags">
+              <span class="card-tag">Python</span>
+              <span class="card-tag">LangChain</span>
+              <span class="card-tag">ChromaDB</span>
+              <span class="card-tag">OpenAI API</span>
+              <span class="card-tag">RAG</span>
+              <span class="card-tag">Vector Search</span>
             </div>
           </div>
         </div>
